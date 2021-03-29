@@ -1,6 +1,5 @@
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet } from "react-native";
 import { ThemeProvider } from "styled-components/native";
 
 import { useFonts as useJost, Jost_400Regular } from "@expo-google-fonts/jost";
@@ -18,7 +17,10 @@ export default function App() {
         InriaSans_400Regular,
     });
 
-    if(!jostLoaded || !inriaSansLoaded) return null;
+    if (!jostLoaded || !inriaSansLoaded) {
+        return null;
+    }
+
     return (
         <>
             <ThemeProvider theme={theme}>
@@ -28,5 +30,3 @@ export default function App() {
         </>
     );
 }
-
-const styles = StyleSheet.create({});

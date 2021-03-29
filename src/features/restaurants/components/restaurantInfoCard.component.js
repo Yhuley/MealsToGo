@@ -9,7 +9,7 @@ import {
     Icon,
     Info,
     Section,
-    SectionEnd
+    SectionEnd,
 } from "./restaurantInfoCard.style";
 
 const RestaurantInfoCard = ({restaurant = {}}) => {
@@ -27,7 +27,6 @@ const RestaurantInfoCard = ({restaurant = {}}) => {
 
     const ratingArray = Array.from(new Array(Math.ceil(rating)));
 
-
     return (
         <RestaurantCard evlevation={5}>
             <RestaurantCardCover
@@ -35,14 +34,16 @@ const RestaurantInfoCard = ({restaurant = {}}) => {
                 source={{uri: photos[0]}}
             />
             <Info>
-                <Text variant="label">
-                    {name}
+                <SectionEnd>
+                    <Text variant="label">
+                        {name}
+                    </Text>
                     <Spacer
                         position="left"
-                        size="medium"
+                        size="small"
                     />
                     <Icon source={{ uri: icon }}/>
-                </Text>
+                </SectionEnd>
                 <Section>
                     <RatingContainer>
                         {ratingArray.map(() => (
