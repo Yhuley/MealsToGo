@@ -1,7 +1,7 @@
 import React from "react";
-import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
-import { Spacer } from "../../../components/spacer.component";
-import { Text } from "../../../components/typography/text.component";
+import {Ionicons, MaterialCommunityIcons} from "@expo/vector-icons";
+import {Spacer} from "../../../components/spacer/spacer.component";
+import {Text} from "../../../components/typography/text.component";
 import {
     RestaurantCard,
     RestaurantCardCover,
@@ -42,7 +42,7 @@ const RestaurantInfoCard = ({restaurant = {}}) => {
                         position="left"
                         size="small"
                     />
-                    <Icon source={{ uri: icon }}/>
+                    <Icon source={{uri: icon}}/>
                 </SectionEnd>
                 <Section>
                     <RatingContainer>
