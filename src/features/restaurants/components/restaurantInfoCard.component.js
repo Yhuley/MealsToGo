@@ -63,7 +63,7 @@ const RestaurantInfoCard = ({restaurant = {}}) => {
                     <SectionEnd>
                         {isOpenNow ?
                             <>
-                                <Text variant="caption">OPEN NOW</Text>
+                                <Text variant="label">OPEN NOW</Text>
                                 <Spacer
                                     position="left"
                                     size="large"
@@ -71,7 +71,7 @@ const RestaurantInfoCard = ({restaurant = {}}) => {
                                 <MaterialCommunityIcons
                                     name="door-open"
                                     size={18}
-                                    color="red"
+                                    color="black"
                                 />
                             </>
                             :
