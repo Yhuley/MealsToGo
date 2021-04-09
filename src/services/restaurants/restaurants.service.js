@@ -9,6 +9,7 @@ export const restaurantsTransform = ({results = []}) => {
         return {
             ...restaurant,
             isOpenNow: restaurant.opening_hours && restaurant.opening_hours.open_now,
+            address: restaurant.vicinity,
         };
     });
 

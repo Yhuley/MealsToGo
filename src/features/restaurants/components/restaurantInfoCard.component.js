@@ -1,4 +1,5 @@
 import React from "react";
+import {View} from "react-native";
 import {Ionicons, MaterialCommunityIcons} from "@expo/vector-icons";
 import {Spacer} from "../../../components/spacer/spacer.component";
 import {Text} from "../../../components/typography/text.component";
@@ -22,7 +23,7 @@ const RestaurantInfoCard = ({restaurant = {}}) => {
         ],
         address = "Stopchativ",
         isOpenNow = false,
-        isClosedTemporarily = "true",
+        placeId,
     } = restaurant;
 
     const ratingArray = Array.from(new Array(Math.ceil(rating)));
@@ -46,18 +47,13 @@ const RestaurantInfoCard = ({restaurant = {}}) => {
                 </SectionEnd>
                 <Section>
                     <RatingContainer>
-                        {ratingArray.map(() => (
-                            <>
-                                <Ionicons
-                                    name="ios-star"
-                                    size={16}
-                                    color="gold"
-                                />
-                                <Spacer
-                                    position="left"
-                                    size="small"
-                                />
-                            </>
+                        {ratingArray.map((_ , i) => (
+                            <Ionicons
+                                name="ios-star"
+                                size={16}
+                                color="gold"
+                                key={`star-${placeId}-${i}`}
+                            />
                         ))}
                     </RatingContainer>
                     <SectionEnd>
