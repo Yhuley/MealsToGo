@@ -11,6 +11,7 @@ import { FavouritesContextProvider } from "./src/services/favourites/favourites.
 
 import {theme} from "./src/infrastructure/theme/index";
 import {Navigation} from "./src/infrastructure/navigation";
+import AuthenticationContextProvider from "./src/services/authentication/authentication.context";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDEF9NDZeGD_LIrD9fVOWS5lnh7F3ixq_s",
@@ -53,16 +54,20 @@ export default function App() {
         return null;
     }
 
+    if (!isAuthenticated) return null;
+
     return (
         <>
             <ThemeProvider theme={theme}>
-                <FavouritesContextProvider>
-                    <LocationContextProvider>
-                        <RestaurantsContextProvider>
-                            <Navigation/>
-                        </RestaurantsContextProvider>
-                    </LocationContextProvider>
-                </FavouritesContextProvider>
+                <AuthenticationContextProvider>
+                    <FavouritesContextProvider>
+                        <LocationContextProvider>
+                            <RestaurantsContextProvider>
+                                <Navigation/>
+                            </RestaurantsContextProvider>
+                        </LocationContextProvider>
+                    </FavouritesContextProvider>
+                </AuthenticationContextProvider>
             </ThemeProvider>
             <ExpoStatusBar style="auto"/>
         </>
